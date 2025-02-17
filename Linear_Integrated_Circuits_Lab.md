@@ -76,8 +76,6 @@ MOSFET is one of the most essential components in electronics due to:
 -  V_gs = 0.9V 
 -  R_d  = **1KΩ**
 - Width varied to obtain the required current
-
-- Gain from AC Analysis = **-20dB**
 - Q-point: **(1.7773V, 27.77µA)**
 ## Results 
 ## 1) DC Analysis:
