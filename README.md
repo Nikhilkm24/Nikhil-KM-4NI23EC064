@@ -77,14 +77,6 @@ MOSFET is one of the most essential components in electronics due to:
 -  R_d  = **1KΩ**
 - Width varied to obtain the required current
 
-| Width (µm) | Current \( I_d \) (µA) | Output Voltage \( V_{out} \) (V) |
-|------------|-------------------|----------------------|
-| 200        | 55.55             | 1.74445             |
-| 140        | 38.88             | 1.76112             |
-| 120        | 33.33             | 1.76667             |
-| 100        | 27.7              | 1.77223             |
-| 97.25      | 27                | 1.7729              |
-
 - Gain from AC Analysis = **-20dB**
 - Q-point: **(1.7773V, 27.77µA)**
 ## Results 
@@ -205,12 +197,6 @@ Stop Frequency: 1THz
 ![image](https://github.com/user-attachments/assets/04cf737b-b96d-4ffc-b4e1-45410395b3b9)
 - Here From the above we will get to know that Current Id=27uA
 
-| Parameter  | Value |
-|------------|--------|
-| DC Operating Point | **(1.799V, 27.7uA)** |
-| Gain from AC Analysis | **-70dB** |
-| Output Voltage \( V_{out} \) | **1.799V** |
-| Phase Shift | **180 degrees** |
 ---
 
 ## Inference
