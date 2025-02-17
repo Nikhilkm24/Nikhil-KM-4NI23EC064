@@ -69,7 +69,8 @@ MOSFET is one of the most essential components in electronics due to:
 ---
 
 ## Circuit 1  
-![image](https://github.com/user-attachments/assets/fd0ff613-126b-4ea7-8ab0-84767edc2ed7)
+![image](https://github.com/user-attachments/assets/fb66878c-4309-4919-8001-34675b50916f)
+
 ### Given:
 - Power = **50µW**
 -  V_dd = 1.8V 
@@ -94,7 +95,8 @@ MOSFET is one of the most essential components in electronics due to:
  - There is 180 degree phase shift between input and output or the DC level shift.
 
 ## Ac Analysis
-![image](https://github.com/user-attachments/assets/48f565f2-098a-42b6-9da0-b84f498394f1)
+![image](https://github.com/user-attachments/assets/8d0f7aad-b656-4e24-907e-790a15febd36)
+
  - Gain = -20 dB
 
 
@@ -137,7 +139,8 @@ The objective of this report is to evaluate the inverting behavior of a CS ampli
 | Drain | Connected to PMOS drain |
 
 ## Circuit 2 
-![image](https://github.com/user-attachments/assets/ac00bff8-3e7f-43fd-a393-ee9cb481343f)
+![image](https://github.com/user-attachments/assets/aa652613-86e0-4449-8b6f-c8d6bcc19202)
+
 ### Given:
 - ( P = V *I  ), where ( V = 1.8V )
 - ( I_d = 27.77uA )
@@ -147,7 +150,8 @@ The objective of this report is to evaluate the inverting behavior of a CS ampli
 
 ## DC Analysis
 
-![image](https://github.com/user-attachments/assets/e56329bb-3c0e-4328-b6e0-0fd85482ce17)
+![image](https://github.com/user-attachments/assets/ad90151a-5938-4fcc-a0c6-11382b4b2988)
+
 
 
 Our approach in conducting DC analysis involves identifying the quiescent operating point (ID) and node voltages that are required to operate the MOSFET.
@@ -168,7 +172,9 @@ ID = 27.7uA
 
 
 ## AC Analysis 
-![image](https://github.com/user-attachments/assets/a5640761-5acd-44f6-af90-37e66da22520)
+![image](https://github.com/user-attachments/assets/33c8e533-6a24-4543-b258-976308e2c893)
+
+
 
 - A sinusoidal input is included in the AC analysis through a modification of gate voltage.
 - Sinusoidal Input Voltage
@@ -183,16 +189,20 @@ Start Frequency: 0.1Hz
 Stop Frequency: 1THz
 
 ## Transient Analysis
-![image](https://github.com/user-attachments/assets/bb1fbf39-1865-4d2e-93c3-1bc537639c8a)
+![image](https://github.com/user-attachments/assets/f397177f-543d-4034-9371-921cdfb9aa2e)
+
 - The voltage present at the drain terminal of the NMOS transister.
 
-![image](https://github.com/user-attachments/assets/a0687263-1f60-4cbd-b1f5-bc32523569bc)
+![image](https://github.com/user-attachments/assets/b7d58318-01f7-4199-ad91-d51552d3087b)
+
 - The voltage present at the gate terminal of the NMOS transister.
 
-![image](https://github.com/user-attachments/assets/fa49be38-7e1c-4b95-b205-c2c939bd4373)
+![image](https://github.com/user-attachments/assets/128d035c-8ef6-4c4b-a4f2-a08ec8cee33f)
+
 - On comparing the input and output voltage we will get to know the phaseshift of 180 degree. 
 
-![image](https://github.com/user-attachments/assets/04cf737b-b96d-4ffc-b4e1-45410395b3b9)
+![image](https://github.com/user-attachments/assets/4863e27a-4aed-42e4-aba7-1d8900223db5)
+
 - Here From the above we will get to know that Current Id=27uA
 
 ---
