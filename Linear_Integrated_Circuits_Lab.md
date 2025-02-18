@@ -139,7 +139,8 @@ The objective of this report is to evaluate the inverting behavior of a CS ampli
 | Drain | Connected to PMOS drain |
 
 ## Circuit 2 
-![image](https://github.com/user-attachments/assets/aa652613-86e0-4449-8b6f-c8d6bcc19202)
+![image](https://github.com/user-attachments/assets/45995b7b-e78c-4049-9341-1fc089e6b7e5)
+
 
 ### Given:
 - ( P = V *I  ), where ( V = 1.8V )
@@ -150,7 +151,7 @@ The objective of this report is to evaluate the inverting behavior of a CS ampli
 
 ## DC Analysis
 
-![image](https://github.com/user-attachments/assets/ad90151a-5938-4fcc-a0c6-11382b4b2988)
+![image](https://github.com/user-attachments/assets/6e0c7469-669e-460d-929b-acc9d5b69272)
 
 
 
