@@ -1,163 +1,234 @@
 
 # Aim
   Design and analyze the mos differential amplifier circuit for the following specification.
+
 # Components Required
   NMOS,Resistor,voltage source,current source
+
 # Theory
   A differential amplifier rejects common-mode signals by design, leveraging the fact that it amplifies only the difference between the voltages at the two inputs (non-inverting and inverting), while it rejects any signals that are common to both inputs. This ability to reject common-mode signals is due to its common-mode rejection mechanism. 
+
 # Question
-  Design and analyse the differential amplifier for the following specification Vdd = 2v , P <=1mw ,Vicm = 1v ,Vocm = 1.1v,Vp = 0.4v perform DC analysis , transient analysis,frequency response and extract the required parameters. 
+  Design and analyse the differential amplifier for the following specification Vdd = 2v , P <=1mw ,Vicm = 1v ,Vocm = 1.1v,Vp = 0.4v.
+
+  Perform:
+- DC Analysis
+- Transient Analysis
+- AC Analysis
+- Extract required parameters
+
 # Circuit 1(Resistor)
- 
+
+  ![Screenshot 2025-03-06 001321 - Copy](https://github.com/user-attachments/assets/4c20fb7c-0099-472e-83f1-5df22aa8f375)
+
 # Calculation(theoretical)
-  Vdd = 1.8v
 
-  Vp = 0.4v
+| Parameter | Symbol | Value |
+|-----------|--------|--------|
+| Supply Voltage | Vdd | 2 V |
+| Voltage at Source | Vp | 0.4 V |
+| Power | P | 1m W |
+| Input Common Mode Voltage | Vicm | 1 V |
+| Output Common Mode Voltage | Vocm | 1.1 V |
+| Source Current | Iss | 0.5m A |
+| Drain Current (each transistor) | Id1 = Id2 | 0.25m A |
+| Drain Resistance | Rd1=Rd2 | 3.6k ohn |
+| Source Resistance | Rss | 800 ohm |
 
-  P = 2.2mw
+1. **Determine Iss (Source Current):** 
+Iss = P / Vdd
+Iss = 1*10^-3 /2
+Iss = 0.5m A
 
-  Vicm = 0.95v
+2. **Calculate Rd (Drain Resistance):**  
+Id1 = Id2 = Iss
+Id1=Iss/2
+Id1=0.25mA
+
+3. **Calculate Rss (Source Resistance):** 
+Rd = ( Vdd -Vocm)/Id1
+Rd = (2-1.1) / 0.25mA
+Rd = 3.6k ohm
+ 
+# *DC Analysis*
+
+### Steps to Perform DC Analysis in LTspice XVII
+1. *Open LTspice* and rigup the MOS differential amplifier circuit schematic.
+2. *Set Up the Simulation Command:*
+   - Click on *Simulate* > *Edit Simulation Cmd*.
+   - In the *DC op pnt* tab, select *.op*.
+   - Click *OK*, and place the generated command on the schematic.
+3. *Check the Component Parameters:*
+   - Ensure that the MOSFET models and resistor values match the given specifications.
+   - Verify that the power supply voltages (Vdd, Vicm) are correctly set.
+4. *Run the Simulation:*
+   - Click on *Run*.
+     ![image](https://github.com/user-attachments/assets/5b178357-31fd-465d-b53a-0c8b8703df84)
+
   
-  Vocm = 1.11v
-  
-  Iss = P/v
-  
-   = 2.2*10^-3 /1.8
+
+# *Transient Analysis*
+
+1. *Open LTspic* and load the circuit schematic.
+2. *Set Up the Simulation Command:*
+   - Click on *Simulate* > *Edit Simulation Cmd*.
+   - In the *Transient* tab, enter a stop time and a step time if needed.
+   - Click *OK*, and place the generated command on the schematic.
+3. *Apply an Input Signal:*
+   - Set a sinusoidal or pulse voltage source at the input nodes.
+   - Define the frequency and amplitude of the input signal.
+4. *Run the Simulation:*
+   - Click on **Run**.
+5. *Analyze the Waveforms:*
+   - Observe the output waveforms at the differential output nodes.
+   - Verify the response and note the phase shift and signal gain.
+
+    ![image](https://github.com/user-attachments/assets/5e53fa2b-3fd3-4eaf-97a0-f831193b0874)
+
+# *AC Analysis*
+
+1. *Set Up the Simulation Command:*
+   - Click on *Simulate* > *Edit Simulation Cmd*.
+   - In the *AC Analysis* tab, select *Type of Sweep Decade*.
+   - Click *OK*.
+2. *Set AC Parameters for Input Source:*
+   - Ensure the input voltage source is set with an AC amplitude (1V).
+3. *Run the Simulation:*
+   - Click on *Run*.
+5. *Analyze the Frequency Response:*
+   - Observe the gain and phase plots.
    
-  Iss = 1.2222 mA
-  
-Id1 = Id2=Iss/2=0.611mA
+   ![image](https://github.com/user-attachments/assets/1e8c16c4-ddfd-4444-a355-04d67f791434)
 
-Rd =( Vdd -Vocm)/Id1
-
-   = (1.8-1.11)/0.611*10^-3
-   
-   = 1.145k ohm
-   
-   Rss = Vp/Iss
-   
-  = 0.4/1.22*100^-3
-
-Rss = 327.33 ohm
-
-# DC Analysis
-  since to get apropiate Id obtained in theoretical we should vary w/l
-  so for this circuit
-  
-   W = 180nm
-    
-   L = .109*10^-3 m
-   
-   
-![WhatsApp Image 2025-03-02 at 22 49 22_652ecb05](https://github.com/user-attachments/assets/42f119bd-2ca4-4ca5-8060-1b5a8d8fcc1c)
-
-
-
-Q point = (Vgs,Id) = (0.5497v,0.611mA)
-
-Now we can vary vdd so that we can know how the q point varies accordingly
-for Vg
-
-vg = 0.95v Q point = (0.5945v,0.611mA)
-
-vg = 1.15v Q point = (0.584326v,0.864mA)
-
-vg = 1.1v Q point = (0.575245v,0.80157mA)
-
-vg = 0.80v Q point = (0.52187v,0.424mA)
-
-vg = 0.70v Q point = (0.5002v,0.3052mA)
-
-# AC analysis
-
- ![WhatsApp Image 2025-03-02 at 23 03 50_8a6f6575](https://github.com/user-attachments/assets/7def2159-0694-44a4-9257-5094847f63a7)
-
-
-# Transient Analysis
-
- ![WhatsApp Image 2025-03-02 at 23 02 52_e8f90c75](https://github.com/user-attachments/assets/a21053cd-98b3-4c64-9aa2-ed217e1c0d04)
-
- # loop gain 
-
-  Av = 14.47dB
+- From the above image we can see that there is a **Phaseshift** of 180°.
+-  **Gain** of  5.255db.
 
 
   # Circuit 2 (Current Source)
 
-  ![WhatsApp Image 2025-03-02 at 23 11 37_f42b2205](https://github.com/user-attachments/assets/347a445f-920b-40b8-a1e5-aee08ce7daa4)
+## Replacement of resister R3 by Current Source 
+
+  ![image](https://github.com/user-attachments/assets/fe5a4226-3771-4cd2-b272-1fee4349f12f)
+
+### What is the requirment of replacing the resister RS by a current source ?
+ ---> 1) Replacing Rs with a current source in a differential amplifier improves:
+- *Gain – A high-impedance current source increases gain*.
+- *CMRR – Reduces common-mode signal interference*.
+- *Bias Stability – Maintains a constant tail current*. 
+- *Linearity – Provides better signal integrity*.
 
 
-: Here Resistor is replaced by Current Source
+# *DC analysis*
 
-: Since the common mode is rejected by an differential ampifier so we give seperate inputs Mosfet
+  ![image](https://github.com/user-attachments/assets/ea5980fd-dd8e-464a-982b-6b81266af807)
 
-# DC analysis
+  
+# *Transient Analysis*
 
-   ![WhatsApp Image 2025-03-02 at 23 05 46_f3bb1f8c](https://github.com/user-attachments/assets/7279138c-18f6-4efa-bb41-97534d1ce5ba)
+  ![image](https://github.com/user-attachments/assets/afb04b11-1041-4c97-bdf5-4ddefe16aedd)
 
+# *AC Analysis*
 
-# AC Analysis
+ ![image](https://github.com/user-attachments/assets/6210e461-7ee4-4a05-b2c8-6698124efe2b)
 
-![WhatsApp Image 2025-03-02 at 23 12 33_3215bd9d](https://github.com/user-attachments/assets/6488f4da-d77a-4884-943b-eaceda30c7b3)
-
-
-# Transient Analysis
-
-![WhatsApp Image 2025-03-02 at 23 11 04_a584b77d](https://github.com/user-attachments/assets/17840274-678d-48f2-8803-bdca062c3a4b)
-
-# Loop Gain
-
-Av = 11.3726 dB
 
 
 # Circuit 3 (Mosfet)
 
-![WhatsApp Image 2025-03-02 at 22 43 44_cb42ec7e](https://github.com/user-attachments/assets/df5ba3c5-13a1-49d3-8f5c-ba43cf984952)
+![image](https://github.com/user-attachments/assets/1c68b49c-6d74-43f8-aa7a-ce015dc6dd7d)
 
-: Here the resistor is replaced by an Mosfet.
+## What is the requirment of replacing the resister RS and current source by a MOSFET in differential amplifier ?
 
-: We should set appropiate Vb value to make mosfet to work 
+*In a differential amplifier, we replace the source resistor (Rs) and current source with a MOSFET current mirror for these reasons:*
+- *Higher Gain – A MOSFET as a current source provides a much higher output resistance compared to a resistor, increasing gain.*
+- *Better Current Matching – A MOSFET current mirror ensures precise current balancing between transistors, improving circuit symmetry*.
+- *Improved Common-Mode Rejection (CMRR) – It enhances the amplifier’s ability to reject common-mode signals, making it more stable*.
+- *Reduced Voltage Drop – A current source MOSFET requires less voltage headroom than a resistor, improving the amplifier's efficiency*.
 
-: For this Mosfet the Vb which we given is 0.6v because it should be greater than vt.
+### L = 300n
+### W =27.86029u
+![image](https://github.com/user-attachments/assets/64d12d57-f45f-4184-8abb-c43dfa1bdb92)
 
-: the W/L we choosen is
-
-L = 180nm
-
-W = 68.8*10^-6 m
-
-
-# DC Analysis
-![WhatsApp Image 2025-03-02 at 22 46 17_0f1c69f3](https://github.com/user-attachments/assets/b5604c74-3583-460b-b097-38fece417a60)
-
-# AC Analysis
-![WhatsApp Image 2025-03-02 at 22 44 48_ea4c58df](https://github.com/user-attachments/assets/d4272b93-51ce-4e66-9f91-136d9d6467eb)
-
-# Transient Analysis 
-
- ![WhatsApp Image 2025-03-02 at 22 42 42_5a0d5801](https://github.com/user-attachments/assets/da9608fd-1bea-4123-afe2-92ab8bbc705c)
-
- # Loop gain
-  Av = 14.19dB
-
-# Result
-The result obtained from the analysis is matched with theoretical values from that we can conclude that design obtained is correct.
+# *DC Analysis*
+![image](https://github.com/user-attachments/assets/3a9b3af9-fb69-4f6a-83c4-4693834a03aa)
 
 
-# Inference
-The differential amplifier successfully amplified the differential signal and rejected the common-mode signal as expected. The results confirm that the amplifier operates as designed, with a high ability to reject noise or interference that is common to both inputs.Even when we given  a common mode voltage it shows wrong graphs and obtained results are not correct.
+# *Transient Analysis*
+
+ ![image](https://github.com/user-attachments/assets/b08dcd24-aab2-46e5-9c1f-367cf626da0a)
+
+# *AC Analysis*
+
+![image](https://github.com/user-attachments/assets/44a4bb75-6e61-4d8b-9193-f5c20f30f33b)
 
 
 
+# **Final Result Comparition**
+| **Parameter** | **Circuit 1** | **Circuit 2** | **Circuit 3** |
+|--------------|--------------|--------------|--------------|
+| **Vo1**  | 1.1V  | 1.1V  | 1.1V  |
+| **Vo2**  | 1.1V  | 1.1V  | 1.1V  |
+| **Vp** | 0.4V | 0.4V | 0.4V |
+| **Id1** | 0.25m A | 0.25m A | 0.25m A |
+| **Id2** | 0.25m A | 0.25m A | 0.25m A |
+| **Iss** | 0.5m A | 0.5| 0.5 A |
 
 
+# *Inference :* 
+## Overview of Circuits
 
+### Circuit 1: Resistor-Based Current Source
+- Uses a **800Ω resistor** as the current source.
+- **Simple** but not very stable.
+- Tail current varies with supply voltage and temperature.
 
+### Circuit 2: Ideal Current Sour
+- **Highly stable**, but not practical for real-world use.
+- Mainly used for theoretical and AC analysis.
 
+### Circuit 3: Active NMOS Current Source
+- Uses an **NMOS transistor as a current source**.
+- **Best stability**, making it the most practical design.
+- Automatically adjusts to maintain a steady tail current.
 
+## Stability of Tail Current
 
+| Circuit  | Current Source | Stability | Notes |
+|----------|---------------|-----------|-------|
+| **Circuit 1** | Resistor  | Low | Affected by voltage and temperature changes. |
+| **Circuit 2** | Ideal Source  | High | Theoretically perfect, but impractical. |
+| **Circuit 3** | NMOS Transistor | Highest | Best for real applications due to auto-adjustment. |
 
+## Why Circuit 3 is the Best Choice
+- **Adds an extra transistor (M3)** to improve current stability.
+- **Keeps current balanced** between M1 & M2.
+- **Minimizes voltage and temperature effects** on performance.
 
+## Voltage & Current Comparison
+
+- **Output Voltage**:
+  - Circuit 1: **1.1V** (out1, out2)
+  - Circuit 3: **1.1V** (out1, out2)
+  - Circuit 3 has slightly better voltage regulation.
+
+- **Drain Current**:
+  - Circuit 1: **0.25m A** (M1, M2)
+  - Circuit 3: **0.25m A** (M1, M2) 
+  - Circuit 3 maintains a steady current using M3 (**0.5m A**).
+
+## 🔥 Key Inference from Experiment
+- A **resistor-based current source (Circuit 1)** is simple but unstable, making it unreliable for real-world applications.
+- An **ideal current source (Circuit 2)** provides perfect stability but is impractical in actual circuits.
+- An **active NMOS current source (Circuit 3)** balances practicality and stability, making it the most effective choice.
+- **Adding M3 ensures stable tail current, reducing voltage fluctuations and enhancing overall performance.**
+
+## 🚀 Final Verdict
+Circuit 3 is the **ultimate winner** for differential amplifier designs because it:
+- ✅ Offers **superior stability**
+- ✅ **Minimizes supply voltage variations**
+- ✅ Provides a **constant, regulated tail current**
+
+🔹 **If you're designing a real-world differential pair, Circuit 3 is your best bet!** 🎯
 
 
 
