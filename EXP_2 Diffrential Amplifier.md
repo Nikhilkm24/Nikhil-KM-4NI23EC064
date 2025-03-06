@@ -135,7 +135,7 @@ Rd = 3.6k ohm
 
 # Circuit 3 (Mosfet)
 
-![image](https://github.com/user-attachments/assets/1c68b49c-6d74-43f8-aa7a-ce015dc6dd7d)
+![image](https://github.com/user-attachments/assets/03da15d3-4415-4169-a8b1-bf7eef59f89b)
 
 ## What is the requirment of replacing the resister RS and current source by a MOSFET in differential amplifier ?
 
@@ -146,21 +146,25 @@ Rd = 3.6k ohm
 - *Reduced Voltage Drop – A current source MOSFET requires less voltage headroom than a resistor, improving the amplifier's efficiency*.
 
 ### L = 300n
-### W =27.86029u
-![image](https://github.com/user-attachments/assets/64d12d57-f45f-4184-8abb-c43dfa1bdb92)
+### W =309.919u
+![image](https://github.com/user-attachments/assets/7f17dd25-0858-44e3-9701-825a54f24eb8)
+
+**Hence on observing the Vgs-Vt>=Vp**
+- Vgs > Vt
+- Vds > Vov
+
+##*The MOSFET M3 is in saturation region* 
 
 # *DC Analysis*
-![image](https://github.com/user-attachments/assets/3a9b3af9-fb69-4f6a-83c4-4693834a03aa)
-
+![image](https://github.com/user-attachments/assets/9c3f0651-7508-4669-984d-dec2f7d59cd5)
 
 # *Transient Analysis*
 
- ![image](https://github.com/user-attachments/assets/b08dcd24-aab2-46e5-9c1f-367cf626da0a)
+![image](https://github.com/user-attachments/assets/18c9611b-8272-48af-9946-36e0665c686c)
 
 # *AC Analysis*
 
-![image](https://github.com/user-attachments/assets/44a4bb75-6e61-4d8b-9193-f5c20f30f33b)
-
+![image](https://github.com/user-attachments/assets/3bb2809e-7dcb-4a68-a620-caf16465d0a4)
 
 
 # **Final Result Comparition**
@@ -171,7 +175,7 @@ Rd = 3.6k ohm
 | **Vp** | 0.4V | 0.4V | 0.4V |
 | **Id1** | 0.25m A | 0.25m A | 0.25m A |
 | **Id2** | 0.25m A | 0.25m A | 0.25m A |
-| **Iss** | 0.5m A | 0.5| 0.5 A |
+| **Iss** | 0.5m A | 0.5m A | 0.50000003m A |
 
 
 # *Inference :* 
@@ -216,19 +220,19 @@ Rd = 3.6k ohm
   - Circuit 3: **0.25m A** (M1, M2) 
   - Circuit 3 maintains a steady current using M3 (**0.5m A**).
 
-## 🔥 Key Inference from Experiment
+##  Key Inference from Experiment
 - A **resistor-based current source (Circuit 1)** is simple but unstable, making it unreliable for real-world applications.
 - An **ideal current source (Circuit 2)** provides perfect stability but is impractical in actual circuits.
 - An **active NMOS current source (Circuit 3)** balances practicality and stability, making it the most effective choice.
 - **Adding M3 ensures stable tail current, reducing voltage fluctuations and enhancing overall performance.**
 
-## 🚀 Final Verdict
+##  Final Verdict
 Circuit 3 is the **ultimate winner** for differential amplifier designs because it:
-- ✅ Offers **superior stability**
-- ✅ **Minimizes supply voltage variations**
-- ✅ Provides a **constant, regulated tail current**
+-  Offers **superior stability**
+-  **Minimizes supply voltage variations**
+-  Provides a **constant, regulated tail current**
 
-🔹 **If you're designing a real-world differential pair, Circuit 3 is your best bet!** 🎯
+🔹 **If you're designing a real-world differential pair, Circuit 3 is your best bet!** 
 
 
 
