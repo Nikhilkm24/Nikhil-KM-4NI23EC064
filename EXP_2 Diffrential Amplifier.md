@@ -230,8 +230,7 @@ Rd = 3.6k ohm
 - An **active NMOS current source (Circuit 3)** balances practicality and stability, making it the most effective choice.
 - **Adding M3 ensures stable tail current, reducing voltage fluctuations and enhancing overall performance.**
 
-##  Final Verdict
-Circuit 3 is the **ultimate winner** for differential amplifier designs because it:
+Circuit 3 is the one of the best circuit among above circuits for differential amplifier designs because it:
 -  Offers **superior stability**
 -  **Minimizes supply voltage variations**
 -  Provides a **constant, regulated tail current**
