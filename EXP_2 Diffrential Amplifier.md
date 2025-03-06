@@ -104,6 +104,10 @@ Rd = 3.6k ohm
 -  **Gain** of  5.255db.
 
 
+
+![image](https://github.com/user-attachments/assets/df47a115-58f9-4e6c-97a6-8a185309f9bf)
+## Maximum input swing is 265m V
+
   # Circuit 2 (Current Source)
 
 ## Replacement of resister R3 by Current Source 
