@@ -108,7 +108,7 @@ Rd = 3.6k ohm
 
 ## Replacement of resister R3 by Current Source 
 
-  ![image](https://github.com/user-attachments/assets/fe5a4226-3771-4cd2-b272-1fee4349f12f)
+![image](https://github.com/user-attachments/assets/8ff78f22-32d6-478a-a968-1f85f5747230)
 
 ### What is the requirment of replacing the resister RS by a current source ?
  ---> 1) Replacing Rs with a current source in a differential amplifier improves:
@@ -125,7 +125,7 @@ Rd = 3.6k ohm
   
 # *Transient Analysis*
 
-  ![image](https://github.com/user-attachments/assets/afb04b11-1041-4c97-bdf5-4ddefe16aedd)
+  ![image](https://github.com/user-attachments/assets/4ef2fdb4-af1f-47d9-8c38-78ed9a618fb1)
 
 # *AC Analysis*
 
